@@ -3,11 +3,7 @@
 import React from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus,
-  faSignOutAlt,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 interface HeaderProps {
   onShowCreatePost?: () => void;
@@ -77,18 +73,7 @@ export const Header: React.FC<HeaderProps> = ({
                   </button>
                 </div>
               </>
-            ) : (
-              /* Guest State */
-              <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-500">Welcome, Guest!</span>
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    className="w-5 h-5 text-gray-400"
-                  />
-                </div>
-              </div>
-            )}
+            ) : null}
           </div>
         </div>
       </div>

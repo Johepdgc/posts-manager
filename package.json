@@ -1,13 +1,33 @@
 {
   "name": "posts-manager",
   "version": "1.0.0",
-  "description": "",
+  "description": "A full-stack posts management application with React frontend and Node.js backend",
   "main": "index.js",
   "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run build && npm start",
+    "build": "cd frontend && npm run build",
+    "setup": "npm run install-all && npm run setup:db",
+    "setup:db": "cd backend && npm run setup-db",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "posts",
+    "blog",
+    "react",
+    "nodejs",
+    "postgresql",
+    "full-stack"
+  ],
+  "author": "Johep Gradis",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }

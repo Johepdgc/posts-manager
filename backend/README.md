@@ -41,7 +41,7 @@ A simple REST API for managing posts with JWT authentication built with Node.js,
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - PostgreSQL database server
 - npm package manager
 
@@ -58,9 +58,20 @@ A simple REST API for managing posts with JWT authentication built with Node.js,
    Create a `.env` file in the backend directory with the following variables:
 
    ```env
+   # Database Configuration (Choose one format)
+   # Option 1: Connection URL
    DATABASE_URL=postgres://username:password@localhost:5432/posts_manager
-   PORT=4000
+
+   # Option 2: Individual parameters (alternative)
+   # DB_HOST=localhost
+   # DB_PORT=5432
+   # DB_NAME=posts_manager
+   # DB_USER=username
+   # DB_PASSWORD=password
+
+   # JWT and Server Configuration
    JWT_SECRET=your_secure_jwt_secret_here
+   PORT=4000
    ```
 
    Replace:
